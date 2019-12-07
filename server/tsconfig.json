@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+        "typeRoots": ["./node_modules/@types", "./@types"],
+        "baseUrl": "src",
+        "removeComments": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}
