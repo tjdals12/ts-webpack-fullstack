@@ -7,9 +7,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { EnvironmentPlugin } = require('webpack');
 
 module.exports = {
-    name: 'for development',
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
+    name: 'for production',
+    mode: 'production',
+    devtool: 'cheap-module-source-map',
     externals: [WebpackNodeExternals()],
     resolve: {
         extensions: paths.moduleFileExtensions.map(ext => `.${ext}`),
@@ -19,13 +19,13 @@ module.exports = {
     },
     plugins: [
         new EnvironmentPlugin({
-            ENV: process.env.ENV || 'production',
+            ENV: process.env.NODE_ENV || 'production',
             PORT: process.env.PORT || 4000,
             DB_URI: process.env.DB_URI,
             DB_USER: process.env.DB_USER,
             DB_PASS: process.env.DB_PASS,
         }),
-        // new ForkTsCheckerWebpackPlugin(),
+        new ForkTsCheckerWebpackPlugin(),
         new HardSourceWebpackPlugin(),
         new CleanWebpackPlugin(),
     ],

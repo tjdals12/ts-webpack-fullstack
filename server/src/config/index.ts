@@ -11,7 +11,9 @@ const configs: Record<string, Record<string, string>> = {
         dbPass: process.env.DB_PASS,
     },
     development: {},
-    production: {},
+    production: {
+        dbUri: 'mongodb://mongo:27017/admin',
+    },
     test: {},
 };
 
