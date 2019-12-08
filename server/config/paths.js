@@ -10,6 +10,6 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
     .map(folder => path.resolve(`${appDirectory}`, folder))
     .join(path.delimiter);
 
-const moduleFileExtensions = ['js', 'ts'];
+const moduleFileExtensions = ['ts'];
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
